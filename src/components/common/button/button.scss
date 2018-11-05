@@ -1,0 +1,19 @@
+.buttonComponent {
+    background-color: white;
+    padding: 10px 28px 10px 28px;
+    font-weight: bold;
+}
+
+.buttonComponent:hover {
+    .buttonComponentLink {
+        color: white;
+    }
+}
+
+.button {
+  color: white;
+
+  a {
+    color: white;
+  }
+}

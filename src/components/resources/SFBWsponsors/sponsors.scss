@@ -1,0 +1,21 @@
+.SFBWsponsorList {
+}
+
+.SFBWsponsorListItem {
+  cursor: pointer;
+  // border: 1px solid black;
+  padding: $gutter;
+  // background-color: $light-gray;
+
+  &:hover {
+    // background-color: $light-gray;
+  }
+}
+
+.SFBWsponsorName {
+  // font-size: 30px;
+}
+
+.SFBWsponsorLevel, .SFBWsponsorDescription {
+  // font-size: 20px;
+}

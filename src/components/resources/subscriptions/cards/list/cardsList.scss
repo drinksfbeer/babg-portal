@@ -1,0 +1,20 @@
+$cardListItemPrimaryColor: #2196F3;
+
+.cardListItem {
+  &.primary {
+    border: 1px solid transparentize($cardListItemPrimaryColor, 0.4);
+
+    &:hover {
+      border-color: transparentize($cardListItemPrimaryColor, 0.3);
+
+      &::before {
+        background-color: transparentize($cardListItemPrimaryColor, 0.3);
+      }
+    }
+
+    &::before {
+      content: "Primary";
+      background-color: transparentize($cardListItemPrimaryColor, 0.4);
+    }
+  }
+}

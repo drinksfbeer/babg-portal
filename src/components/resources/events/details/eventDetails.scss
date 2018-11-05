@@ -1,0 +1,147 @@
+// should really move these to global variables
+// (also in `adminAgentEventList.scss`)
+$statusBgTransparency: 0.85;
+$unknownColor: #212121; // Gray 900
+$approvedColor: #2E7D32; // Green 800
+$pendingColor: #EF6C00; // Orange 800
+$rejectedColor: #C62828; // Red 800
+
+.eventDetails {
+  background-color: #fff;
+
+  .agent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: transparentize($unknownColor, $statusBgTransparency);
+
+    &.approved {
+      background-color: transparentize($approvedColor, $statusBgTransparency);
+
+      .status {
+        color: $approvedColor;
+      }
+    }
+
+    &.pending {
+      background-color: transparentize($pendingColor, $statusBgTransparency);
+
+      .status {
+        color: $pendingColor;
+      }
+    }
+
+    &.rejected {
+      background-color: transparentize($rejectedColor, $statusBgTransparency);
+
+      .status {
+        color: $rejectedColor;
+      }
+    }
+
+    .status {
+      margin-bottom: 7px;
+      font-size: 250%;
+      font-variant: small-caps;
+      color: $unknownColor;
+      text-transform: lowercase;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .item {
+        display: flex;
+        align-items: center;
+        color: transparentize(black, 0.75);
+        cursor: pointer;
+        transition: color 0.3s;
+        user-select: none;
+
+        &:not(.active):hover {
+          color: transparentize(black, 0.5);
+        }
+
+        &:not(:last-child) {
+          margin-right: 2em;
+        }
+
+        &.active {
+          color: #1565C0;
+        }
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+      background-color: transparent;
+      user-select: none;
+    }
+
+    .button {
+      margin-right: 1em;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .eventAddress {
+    text-decoration: underline;
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  .actions {
+    $padding: 14px;
+    padding: $padding;
+    background: $sdbeerBGColor;
+
+    .item {
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
+    i, .label {
+      display: inline-block;
+      vertical-align: middle;
+      color: $sdbeerColorDarkBlue;
+      cursor: pointer;
+    }
+
+    i.md-inactive {
+      opacity: .26;
+    }
+
+    i.md-active {
+      color: $sdbeerColorGold;
+    }
+
+    .label {
+      background: none;
+      padding: 0 4px;
+      color: $sdbeerColorDarkBlue;
+    }
+  }
+}
+
+.eventLink {
+  margin: 0 0 0 10px;
+}

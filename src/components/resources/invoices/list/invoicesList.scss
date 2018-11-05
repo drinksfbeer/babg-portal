@@ -1,0 +1,22 @@
+.paymentStatus {
+  display: flex;
+  justify-content: center;
+  span {
+    font-weight: bold;
+  }
+}
+
+.paid {
+  color: #43A047;
+}
+
+.unpaid {
+  color: #00BCD4
+}
+
+.invoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

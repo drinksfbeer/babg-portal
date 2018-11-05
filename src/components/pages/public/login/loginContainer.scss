@@ -1,0 +1,145 @@
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include breakpoint(small only) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .image-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(small only) {
+
+    }
+
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: $black;
+      opacity: 0.55;
+      content: '';
+      z-index: 1;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      position: relative;
+      z-index: 999;
+      .title {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .main {
+          letter-spacing: 0.125em;
+        }
+
+        .secondary {
+          font-size: 50%;
+          letter-spacing: 0.125em;
+          padding: 10px;
+          background-color: #b74e0f;
+
+        }
+      }
+    }
+  }
+
+  .side-form {
+    background-color: $white;
+    padding: $gutter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint(large up) {
+      padding: $gutter $gutter * 3;
+    }
+    .main-title {
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .secondary-title {
+      color: $sdbeerColorDarkBlue;
+      text-align: center;
+    }
+
+    button, .button {
+
+      &.inverted {
+        color: #333333;
+        background-color: transparent;
+      }
+    }
+
+    form {
+      width: 100%;
+
+      input {
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
+  }
+  // .register-form {
+  //   background-color: $white;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   flex-direction: column;
+  //
+  //   button, .button {
+  //     margin-bottom: 0;
+  //
+  //     &.inverted {
+  //       color: #333333;
+  //       background-color: transparent;
+  //     }
+  //   }
+  //
+  //   .sfbwRegister {
+  //     margin-top: 30px;
+  //   }
+  // }
+}
+
+.nav-closed  {
+  &.full  {
+    .body-container {
+      left: 0 !important;
+   }
+ }
+}
+
+
+.options {
+  width: 100%;
+  text-align: center;
+  h6 {
+    color: #999;
+    a {
+      color: #999;
+      border-bottom: solid 1px #999;
+      cursor: pointer;
+      padding-bottom: 5px;
+    }
+  }
+}

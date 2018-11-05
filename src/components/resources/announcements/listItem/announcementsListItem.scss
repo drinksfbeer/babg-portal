@@ -1,0 +1,9 @@
+span.Linkify {
+  a {
+    color: $sdbeerColorDarkBlue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

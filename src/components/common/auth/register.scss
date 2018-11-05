@@ -1,0 +1,20 @@
+.register {
+  @include authPages;
+
+  .site-logo {
+    #sd, #beer {
+      fill: $sdbeerColorDarkBlue;
+    }
+  }
+
+  input {
+    // background: transparent;
+
+  }
+
+  label {
+    color: $sdbeerColorDarkBlue;
+  }
+
+
+}

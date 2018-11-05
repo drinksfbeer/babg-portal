@@ -1,0 +1,153 @@
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-global {
+  @include transition(all .35s ease);
+}
+
+@mixin minHeightSection {
+  min-height: 100vh;
+}
+
+@mixin sectionPadding {
+  padding: $gutter * 2 $gutter;
+}
+
+.sectionPadding {
+  @include sectionPadding;
+  padding-top: 20px;
+}
+
+section {
+  section {
+    // padding: 0 !important;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin globalItemShadow {
+  @include box-shadow(0, 3px, 2px, rgba(0, 0, 0, 0.05));
+}
+
+@mixin globalItemShadowHover {
+  @include box-shadow(0, 1px, 8px, rgba(0, 0, 0, 0.075));
+}
+
+@mixin globalItem {
+  border: solid 1px #d6d6d6;
+  @include transition-global;
+  @include globalItemShadow;
+
+  &:hover {
+    @include globalItemShadowHover;
+    border-color: $sdbeerColorSubtle;
+  }
+}
+
+
+@mixin authPages {
+
+  @include linear-gradient(lighten( $sdbeerColorPrimary, 2% ) 40%, lighten( $sdbeerColorPrimary, 4% ));
+
+}
+
+
+@mixin formBox {
+    background-color: white;
+    border-radius: 6px;
+    padding: $gutter !important;
+
+    @include box-shadow(0, 1px, 7px, rgba(0, 0, 0, 0.15));
+}
+
+.formBox {
+  @include formBox;
+}
+
+
+
+@mixin page-margin {
+  margin: $gutter * 2 0;
+
+}
+
+@mixin flex-center {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@mixin flex-column-center {
+
+  flex-direction: column;
+  @include flex-center;
+
+
+  @include bp(small) {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-row-center {
+  flex-direction: row;
+  @include flex-center;
+
+  @include bp(small) {
+    flex-direction: column;
+  }
+}
+
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-global {
+  @include transition(all .35s ease);
+}
+
+
+@mixin transitionGlobal {
+  @include transition(all .35s ease);
+}
+
+@mixin border-radius {
+  border-radius: $global-radius;
+}
+
+
+
+@mixin global-section {
+  padding: $gutter * 1.5 0;
+}
+
+
+
+@mixin pointer {
+  cursor: pointer;
+}

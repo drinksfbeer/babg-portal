@@ -1,0 +1,12 @@
+@import './sectionBuilder/sectionBuilder';
+
+.description {
+  margin-bottom: $gutter / 2;
+}
+
+// react-credit-card-input
+#field-wrapper {
+  label {
+    margin-top: 0;
+  }
+}

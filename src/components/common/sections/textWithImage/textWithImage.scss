@@ -1,0 +1,90 @@
+
+.textWithImage {
+
+  .button {
+
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &:hover,
+  &:active {
+
+    img {
+    }
+  }
+
+  @include global-section;
+
+  img {
+    @include section-transition-global;
+  }
+
+  &.flipped {
+    img {
+    }
+    .gridz {
+
+      .span {
+        order: 2;
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+    }
+  }//flipped
+
+  &.stacked {
+
+    .callOut {
+      text-align: center;
+
+      .title {
+        text-align: center;
+      }
+      .subtitle {
+        text-align: center;
+      }
+      .button {
+        justify-content: center;
+      }
+    }
+    .gridz {
+      .span {
+        grid-column: span 12 !important;
+        order: 2;
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+    }
+
+    &.flipped {
+      .gridz {
+
+      .span {
+        order: 1 !important;
+        &:nth-child(2) {
+          order: 2 !important;
+        }
+      }
+    }
+
+    }
+  }//stacked
+
+
+}

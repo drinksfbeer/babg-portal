@@ -1,0 +1,62 @@
+
+
+
+
+$sdbeerColorPrimary: #21170e;
+$sdbeerColorGold: #d1be92;
+$sdbeerColorDarkBlue: #07505c;
+
+$sdbeerColorGrey: #f2f2f2;
+
+$sdbeerBGColor: #fff;
+
+.sdbeerBGColor {
+  background-color: $sdbeerBGColor;
+}
+
+@mixin globalBgColor {
+  background-color: transparent;
+}
+
+$sdbeerColorSubtle: rgba(0, 0, 0, 0.6);
+
+
+$sdbeerColorPrimaryMedium: darken($sdbeerColorPrimary, 14%);
+
+
+
+@function tint($color, $percentage) {
+  @return mix($white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix($black, $color, $percentage);
+}
+
+$white: #fff;
+$black: #000;
+$red: #f00;
+$color-purple: #409;
+$color-green: #00c7b1;
+$color-pink: #ff9da2;
+$color-yellow:#fdd086;
+
+
+$color-gray: lighten($black, 55%);
+$color-medium-gray: lighten($black, 70%);
+$color-light-gray: lighten($black, 95%);
+
+
+
+
+$color-dark-purple: darken($color-purple, 10%);
+
+
+
+
+
+$color-primary: $black;
+$color-secondary: $color-gray;
+$color-accent: #016d7f;
+
+$color-accent-light: lighten($color-accent, 20%);

@@ -1,0 +1,196 @@
+.filestackButton {
+
+}
+.description {
+  padding-top: $gutter / 3;
+  font-size: 0.95em;
+  // text-transform: capitalize;
+  justify-content: flex-end;
+  margin: 0;
+  padding-bottom: 10px;
+  color: $medium-gray;
+  width: 100%;
+  text-align: left;
+}
+
+.field-header {
+  margin-bottom: $gutter / 2;
+  // border-bottom: 1px solid $medium-gray;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+
+  svg {
+    margin-right: $gutter / 2;
+    width: 1.15em !important;
+    height: auto;
+  }
+
+  h4 {
+    width: 100%;
+    border-bottom: 1px solid $black;
+    display: flex;
+    margin-bottom: -1px;
+    font-size: 1em;
+    padding-bottom: 10px;
+    color: $black;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+  }
+
+  .description {
+    @extend .description;
+  }
+
+  h6 {
+
+  }
+
+  .icon-click {
+    &:hover {
+      cursor: pointer;
+      color: red;
+    }
+
+  }
+}
+
+form {
+  label {
+    margin-top: $gutter / 2;
+    color: $dark-gray;
+    font-weight: 600;
+    letter-spacing: .1em;
+  }
+
+  .toggle-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+  border: 1px solid darken($gray, 14%);
+  background-color: lighten($gray, 3%);
+  box-shadow: none;
+
+  @include transitionGlobal;
+
+  &:focus {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    border-color: $accent-color;
+    box-shadow: none;
+
+    textarea {
+      border-radius: 3px;
+      border-right: 1px;
+    }
+  }
+}
+
+.icon-picker {
+
+  .icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .icon-selected {
+    background-color: $dark-gray;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px 0 0 3px;
+    svg {
+      color: $white;
+    }
+  }
+  .icon-dropdown {
+    padding: 5px;
+    background-color: $gray;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+    display: flex;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+
+    div {
+      display: block;
+      align-items: center;
+      cursor: pointer;
+      width: 100%;
+      height: auto;
+      padding: 8px;
+      // margin: 6px 0;
+
+      flex-direction: row;
+
+      &:hover {
+        background-color: $medium-gray;
+      }
+
+      svg {
+        display: inline-block;
+        height: auto;
+        margin-right: 8px;
+      }
+
+      span {
+        display: inline-block;
+        height: auto;
+      }
+
+    }
+
+    .icon-dropdown-item {
+
+    }
+  }
+}
+
+// .featured {
+//   &.cell {
+//     .grid-x  {
+//       .cell {
+//         height: auto;
+//       }
+//     }
+//   }
+// }
+
+input:checked ~ .switch-paddle {
+  background-color: $green;
+}
+
+
+.file-stack-field {
+  img {
+    border: solid 1px #666;
+  }
+}

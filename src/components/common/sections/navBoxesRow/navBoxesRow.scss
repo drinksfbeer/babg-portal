@@ -1,0 +1,31 @@
+.nav-boxes {
+
+  .nav-box {
+    position: relative;
+    padding: $section-gutter;
+    @include section-background-image;
+    @include section-global-item-before;
+
+    &:before {
+    }
+
+    .content {
+      @include section-content;
+      position: relative;
+      z-index: 2;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        color: $white;
+        text-transform: uppercase;
+      }
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+}

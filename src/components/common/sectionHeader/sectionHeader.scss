@@ -1,0 +1,71 @@
+.sectionHeader {
+  .top {
+    background-color: $accent-color;
+    // background-color: $sdbeerColorDarkBlue;
+    // @include linear-gradient(#21170e, darken( #21170e, 1% ));
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    font-size: 1.5em;
+    align-items: center;
+
+    i {
+      margin-right: 5px;
+      font-size: 1.5em;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    // background-color: lighten($sdbeerColorSubtle, 38%);
+    // @include linear-gradient($sdbeerColorPrimary 40%, darken( $sdbeerColorPrimary, 3% ));
+    background-color: $gray;
+
+    .back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      cursor: pointer;
+
+      i {
+      margin-right: 5px;
+      font-size: 200%;
+
+      }
+    }
+
+    .navLink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      border-bottom: solid 2px transparent;
+      @include transition(all .35s ease);
+      color: $accent-color-light;
+      cursor: pointer;
+      font-size: 0.85em;
+
+      &.active {
+        border-bottom: solid 2px $accent-color;
+        color: $accent-color;
+      }
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    i {
+    margin-right: 5px;
+    font-size: 200%;
+
+    }
+  }
+
+
+}

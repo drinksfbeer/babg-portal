@@ -1,0 +1,124 @@
+$roleBgTransparency: 0.9;
+
+.accountsList {
+  button, .button {
+    margin-bottom: 0;
+  }
+
+  .table {
+    .heading {
+      display: flex;
+      align-items: center;
+      padding: 0.75em;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      background-color: #424242;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom: 2px solid darken(#424242, 10%);
+
+      & > div:first-child {
+        text-align: left;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      padding: 0.75em;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .email {
+        font-weight: bold;
+        // text-align: center;
+      }
+
+      .role {
+        padding: 5px;
+        color: #212121;
+        font-size: 20px;
+        font-variant: small-caps;
+        text-transform: lowercase;
+        text-align: center;
+        background-color: transparentize(#212121, $roleBgTransparency); // Gray 800
+        border-radius: 3px;
+
+        &.master { // Blue Gray 800
+          color: #37474F;
+          background-color: transparentize(#37474F, $roleBgTransparency);
+        }
+
+        &.chapter { // Indigo 800
+          color: #283593;
+          background-color: transparentize(#283593, $roleBgTransparency);
+        }
+
+        &.member { // Blue 800
+          color: #1565C0;
+          background-color: transparentize(#1565C0, $roleBgTransparency);
+        }
+
+        &.staff { // Teal 800
+          color: #00695C;
+          background-color: transparentize(#00695C, $roleBgTransparency);
+        }
+
+        &.agent { // Purple 800
+          color: #6A1B9A;
+          background-color: transparentize(#6A1B9A, $roleBgTransparency);
+        }
+
+        &.enthusiast { // Pink 800
+          color: #AD1457;
+          background-color: transparentize(#AD1457, $roleBgTransparency);
+        }
+      }
+
+      .association {
+        text-align: center;
+      }
+
+      .chapterName {
+        font-size: 20px;
+        font-variant: small-caps;
+        text-transform: lowercase;
+      }
+
+      .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #9E9E9E;
+
+        &.registration {
+          color: #FF9800;
+
+          &.active {
+            color: #26A69A;
+          }
+        }
+
+        i {
+          margin-right: 0.25em;
+          user-select: none;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

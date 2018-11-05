@@ -1,0 +1,10 @@
+.profile {
+  user-select: none;
+  height: auto;
+
+  .status {
+    color: $white;
+    letter-spacing: .05em;
+    margin-bottom: 0;
+  }
+}

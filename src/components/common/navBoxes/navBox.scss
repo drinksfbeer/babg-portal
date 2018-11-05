@@ -1,0 +1,42 @@
+.nav-box {
+  position: relative;
+  @include globalItemShadow();
+  @include transitionGlobal();
+
+  &:before {
+    @include linear-gradient-standard($sdbeerColorPrimary, $sdbeerColorPrimary, 0.6, 1);
+    @include beforeCover();
+    @include transitionGlobal();
+  }
+
+  .inside {
+    @include zIndexTop();
+  }
+
+  &:hover {
+
+    @include globalItemShadowHover();
+
+    &:before {
+      @include linear-gradient-standard($sdbeerColorGold, $sdbeerColorPrimary, 0.4, 1);
+    }
+    }
+
+
+    margin: 1vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+
+    .button {
+      background-color: #fff;
+      .inside {
+        color: #000;
+      }
+    }
+}
+
+// @media screen and (min-width: 1000px) {
+//   .nav-box {
+//     max-width: 30%;
+//   }
+// }

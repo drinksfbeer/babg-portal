@@ -1,0 +1,60 @@
+
+.flex,
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+
+  // &>* {
+  //   display: flex;
+  // }
+
+  input {
+    width: 100%;
+  }
+
+
+  &.flex-column {
+
+    .flex-item {
+      flex-direction: column;
+    }
+  }
+
+  &.padding-column {
+
+    .flex-item {
+      padding: $gutter / 2 0;
+    }
+
+  }
+
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-item {
+  flex-direction: column;
+  padding: $gutter / 3 0;
+  width: 100%;
+
+  .button {
+    display: inline-block !important;
+  }
+
+}

@@ -1,0 +1,61 @@
+$planListItemActiveColor: #4CAF50;
+$planListItemInactiveColor: #9E9E9E;
+
+.planListItem {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-top-left-radius: 3px;
+    user-select: none;
+    transition: all 0.2s;
+  }
+
+  &.active {
+    border: 1px solid transparentize($planListItemActiveColor, 0.4);
+
+    &:hover {
+      border-color: transparentize($planListItemActiveColor, 0.3);
+
+      &::before {
+        background-color: transparentize($planListItemActiveColor, 0.3);
+      }
+    }
+
+    &::before {
+      content: "Active";
+      background-color: transparentize($planListItemActiveColor, 0.4);
+    }
+  }
+
+  &.inactive {
+    border: 1px solid transparentize($planListItemInactiveColor, 0.4);
+    opacity: 0.5;
+
+    &:hover {
+      border-color: transparentize($planListItemInactiveColor, 0.3);
+
+      &::before {
+        background-color: transparentize($planListItemInactiveColor, 0.3);
+      }
+    }
+
+    &::before {
+      content: "Inactive";
+      background-color: transparentize($planListItemInactiveColor, 0.4);
+    }
+  }
+
+  .nickname {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

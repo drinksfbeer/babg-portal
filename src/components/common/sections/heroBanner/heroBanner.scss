@@ -1,0 +1,88 @@
+$gutter: 30px;
+
+$white: #fff;
+$black: #000;
+
+.hero-banner {
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 4vh 15vw;
+  overflow: hidden;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0.65;
+  }
+
+  &.project {
+    &:before {
+      opacity: .65;
+    }
+  }
+
+  .content {
+    width: 100%;
+    flex-direction: column;
+    z-index: 99999999;
+
+    .text {
+      text-align: center;
+      color: white;
+
+      .title {
+        color: $white;
+        font-weight: 800;
+        margin: $gutter 0;
+        text-transform: uppercase;
+        letter-spacing: .125em;
+        text-transform: uppercase;
+      }
+
+      .sub-title {
+        color: #fff;
+        margin: $gutter 0;
+        letter-spacing: .125em;
+      }
+
+      .description {
+        font-weight: 600;
+        color: $white;
+        letter-spacing: .08em;
+      }
+
+    }//text
+
+    .buttons {
+      align-self: center;
+      justify-content: center;
+      margin: auto;
+
+      .button {
+        background-color: $white;
+
+        .button__inner {
+          a, svg {
+            color: #000;
+          }
+
+          svg {
+            margin-right: 0.5em;
+          }
+        }
+      }
+    }//buttons
+
+  }//content
+}

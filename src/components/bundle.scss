@@ -1,0 +1,40 @@
+@import "../styling/settings";
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything(true);
+@include foundation-grid;
+@include foundation-xy-grid-classes(
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true
+);
+
+@include foundation-switch;
+
+@import '../styling/global-variables';
+@import '../styling/colors';
+@import '../styling/mixins';
+@import '../styling/flatpickr';
+@import './common/header/header';
+
+@import '../styling/public/public-all';
+
+@import './common/common-all';
+@import './pages/pages-all';
+@import '../styling/quill';
+@import './common/404/404';
+@import './resources/resources-all';
+
+
+
+label {
+  font-size:0.875 rem;
+  line-height:1.8;
+  color:#464646;
+  letter-spacing:1px;
+  text-transform:capitalize;
+  font-weight:600;
+}

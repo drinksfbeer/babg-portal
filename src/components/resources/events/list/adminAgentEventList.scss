@@ -1,0 +1,146 @@
+$statusBgTransparency: 0.9;
+$unknownColor: #212121; // Gray 900 -- when status is not one of the following three
+$approvedColor: #2E7D32; // Green 800
+$pendingColor: #EF6C00; // Orange 800
+$rejectedColor: #C62828; // Red 800
+
+.publicEventsList {
+  .eventApprovalButton {
+    margin-right: 20px;
+  }
+
+  // .agentEvent-company-name {
+  //
+  // }
+
+  .agentEvent-title {
+    font-weight: bold;
+  }
+
+  .agentEvent-company-name {
+    font-weight: bold;
+  }
+
+  .table {
+    .heading {
+      display: flex;
+      align-items: center;
+      padding: 0.75em;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      background-color: #424242;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom: 2px solid darken(#424242, 10%);
+      user-select: none;
+
+      & > div {
+        &:first-child {
+          text-align: left;
+        }
+
+        &.sortable {
+          text-decoration: underline;
+          cursor: pointer;
+
+          &.asc {
+            &::after {
+              content: '';
+              margin-left: 5px;
+              padding: 5px;
+              background-image: url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIRnC2nKLnT4or00Puy3rx7VQAAOw==);
+              background-repeat: no-repeat;
+              background-position: center right;
+              filter: invert(1);
+            }
+          }
+
+          &.desc {
+            &::after {
+              content: '';
+              margin-left: 5px;
+              padding: 5px;
+              background-image: url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIPnI+py+0/hJzz0IruwjsVADs=);
+              background-repeat: no-repeat;
+              background-position: center right;
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .agentEventContainer {
+    display: flex;
+    align-items: center;
+    padding: 0.75em;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .agentEvent {
+      display: flex;
+      flex-flow: wrap;
+      align-items: center;
+
+      &:not(:first-child) {
+        justify-content: center;
+        text-align: center;
+      }
+
+      &.status {
+        padding: 5px;
+        color: $unknownColor;
+        font-size: 20px;
+        font-variant: small-caps;
+        text-transform: lowercase;
+        text-align: center;
+        background-color: transparentize($unknownColor, $statusBgTransparency);
+        border-radius: 3px;
+
+        &.approved {
+          color: $approvedColor;
+          background-color: transparentize($approvedColor, $statusBgTransparency);
+        }
+
+        &.pending {
+          color: $pendingColor;
+          background-color: transparentize($pendingColor, $statusBgTransparency);
+        }
+
+        &.rejected {
+          color: $rejectedColor;
+          background-color: transparentize($rejectedColor, $statusBgTransparency);
+        }
+      }
+
+      .button {
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.no-click {
+          cursor: default;
+          user-select: none;
+          background-color: #f2f2f2;
+          color: $black;
+          text-transform: capitalize;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

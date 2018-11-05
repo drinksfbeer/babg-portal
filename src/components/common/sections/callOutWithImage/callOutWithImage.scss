@@ -1,0 +1,8 @@
+.callOutWithImage {
+  @include section-background-image;
+
+  .callOut {
+    background-color: $white;
+    padding: $section-gutter;
+  }
+}

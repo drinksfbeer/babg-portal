@@ -1,0 +1,18 @@
+.eventsList {
+  @include globalBgColor;
+  @include sectionPadding;
+	min-height: 100vh;
+  // padding-bottom: 20px;
+
+	&.fit-to-box {
+		min-height:initial;
+  }
+
+  .list {
+    max-width: 1200px;
+  }
+}
+
+.upComingEvents {
+  padding: $gutter;
+}

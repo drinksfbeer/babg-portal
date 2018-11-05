@@ -1,0 +1,131 @@
+#beerJars{
+ background: #fff;
+ color:#07505c;
+ font-family: 'Open Sans', sans-serif;
+ overflow: hidden;
+ @include breakpoint(medium down){
+  height: 100vh;
+  width: 100vw;
+ }
+}
+.text404{
+ text-align: center;
+ display: block;
+ position: relative;
+ width:80%;
+ margin:100px auto;
+}
+._404{
+ text-align: center;
+ z-index: 2;
+ letter-spacing: 10px;
+ font-weight: 700;
+ font-size: 150px;
+ @include breakpoint(medium down){
+  font-size: 21pt;
+  margin-bottom: 10px;
+ }
+}
+
+
+.btnBack{
+ background-color: #07505c;
+ padding: 5px 15px;
+ z-index: 15;
+ color:#fff;
+ text-decoration: none;
+ border-radius: 5px;
+ font-weight: 600;
+ margin-top: 10px;
+}
+.btnBack:hover {
+ color: white;
+ opacity: 0.5;
+ transition: all .2s;
+}
+
+.btnBack:focus {
+ color: white;
+ opacity: 0.5;
+ transition: all .2s;
+}
+//
+// #fourLine{
+//  padding: 0;
+//  margin-top: 0;
+//  border: none;
+//  color: #07505c;
+//  text-align: center;
+//  height:5px;
+//  background: #07505c;
+//  z-index: 55;
+//  width: 70px !important;
+// }
+//
+//
+// .beerJar {
+//  // width: 350px; height: 350px;
+//  // background-image: url("https://s3-us-west-1.amazonaws.com/sdbeer2/sdbeericon_android.png");
+//  background-size: contain;
+//  position: absolute;
+//  margin: 120px auto 20px;
+//  z-index:15;
+//  transition: ease 1s;
+//  font-size: 100px;
+//  @include breakpoint(small only) {
+//   height: 150px;
+//   width: 150px;
+//  }
+// }
+// .x1 {
+//  top:-50px;
+//  left:100px;
+//  transform: scale(0.3);
+//  opacity: 0.9;
+//  animation: movebeers 15s linear infinite;
+// }
+//
+// .x1_5{
+//  top:-80px;
+//  left:250px;
+//  transform: scale(0.3);
+//  animation: movebeers 17s linear infinite;
+// }
+//
+// .x2 {
+//  left: 250px;
+//  top:30px;
+//  transform: scale(0.6);
+//  opacity: 0.6;
+//  animation: movebeers 25s linear infinite;
+// }
+//
+// .x3 {
+//  left: 250px; bottom: -70px;
+//  transform: scale(0.6);
+//  opacity: 0.8;
+//  animation: movebeers 25s linear infinite;
+// }
+//
+// .x4 {
+//  left: 470px; bottom: 20px;
+//  transform: scale(0.75);
+//  opacity: 0.75;
+//  animation: movebeers 18s linear infinite;
+// }
+//
+// .x5 {
+//  left: 200px; top: 300px;
+//  transform: scale(0.5);
+//  opacity: 0.8;
+//  animation: movebeers 20s linear infinite;
+// }
+//
+// @keyframes movebeers {
+//  0% {margin-left: 1000px;}
+//  100% {margin-left: -1000px;}
+//  @include breakpoint(small only) {
+//    0% {margin-left: 600px;}
+//    100% {margin-left: -600px;}
+//  }
+// }

@@ -1,0 +1,32 @@
+.chapter-list-item {
+  background-size: cover;
+  min-height: 200px;
+  display: flex;
+  position: relative;
+
+  &::before {
+    @include gradientCoverPrymary;
+    @include beforeCover;
+    opacity: .55;
+    @include transitionGlobal;
+  }
+
+  &:hover {
+    &::before {
+      opacity: .45;
+    }
+  }
+
+  .content {
+    color: $white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    @include z-index-2;
+  }
+}

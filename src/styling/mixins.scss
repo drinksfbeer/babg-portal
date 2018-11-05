@@ -1,0 +1,181 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+@mixin global-section {
+  padding: $gutter * 1.5 0;
+}
+
+@mixin transitionGlobal {
+  @include transition(all .35s ease);
+}
+@mixin minHeightSection {
+  min-height: 100vh;
+}
+
+@mixin sectionPadding {
+  padding: $gutter * 1.25 $gutter;
+
+}
+
+.sectionPadding {
+  @include sectionPadding;
+}
+
+section {
+  section {
+    // padding: 0 !important;
+  }
+}
+
+@mixin beforeCover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin gradientCoverPrymary {
+  @include linear-gradient($sdbeerColorPrimary 40%, darken( $sdbeerColorPrimary, 10% ));
+}
+
+
+@mixin linear-gradient-image($direction, $color-stops, $url...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops), url($url);
+}
+
+
+@mixin linear-gradient-new($top-color, $bottom-color, $opacity1, $opacity2, $url) {
+    background: linear-gradient(to bottom, rgba($top-color, $opacity1) 0%, rgba($bottom-color, $opacity2) 100%), url($url); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+@mixin linear-gradient-standard($top-color, $bottom-color, $opacity1, $opacity2) {
+    background: linear-gradient(to bottom, rgba($top-color, $opacity1) 0%, rgba($bottom-color, $opacity2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+
+@mixin beforeCover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+@mixin z-index-2 {
+  z-index: 2;
+}
+
+@mixin zIndexTop {
+  z-index: 99999999;
+}
+
+
+
+@mixin globalItemShadow {
+  @include box-shadow(0, 3px, 2px, rgba(0, 0, 0, 0.05));
+}
+
+@mixin globalItemShadowHover {
+  @include box-shadow(0, 1px, 8px, rgba(0, 0, 0, 0.075));
+}
+
+@mixin globalItem {
+  border: solid 1px #d6d6d6;
+  @include transitionGlobal;
+  @include globalItemShadow;
+
+  &:hover {
+    @include globalItemShadowHover;
+    border-color: $sdbeerColorSubtle;
+  }
+}
+
+
+@mixin authPages {
+
+  @include linear-gradient(lighten( $sdbeerColorPrimary, 2% ) 40%, lighten( $sdbeerColorPrimary, 4% ));
+
+}
+
+
+@mixin formBox {
+    background-color: white;
+    border-radius: 6px;
+    padding: $gutter !important;
+
+    @include box-shadow(0, 1px, 7px, rgba(0, 0, 0, 0.15));
+}
+
+.formBox {
+  @include formBox;
+}
+
+
+.cover-item {
+
+    background-size: cover;
+    min-height: 200px;
+    display: flex;
+    position: relative;
+
+    &::before {
+      @include gradientCoverPrymary;
+      @include beforeCover;
+      opacity: .55;
+      @include transitionGlobal;
+    }
+
+    &:hover {
+      &::before {
+        opacity: .45;
+      }
+    }
+
+    .content {
+      color: $white;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      text-align: center;
+      @include z-index-2;
+    }
+}

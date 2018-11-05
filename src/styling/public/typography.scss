@@ -1,0 +1,147 @@
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+@mixin font-weight-light {
+  font-weight: $font-weight-light;
+}
+
+@mixin font-weight-normal {
+  font-weight: $font-weight-normal;
+}
+
+@mixin font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+@mixin main-font {
+  font-family: $primary-font-family !important;
+}
+@mixin secondary-font {
+  font-family: $secondary-fontFamily !important;
+}
+
+
+body {
+  @include main-font;
+  color: $color-primary;
+}
+
+@mixin letter-spacing {
+  letter-spacing: $letter-spacing;
+}
+
+@mixin letter-spacing-button {
+  letter-spacing: $letter-spacing-button;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @include letter-spacing;
+  @include secondary-font;
+  font-weight: 600;
+  line-height: 1;
+  margin: $gutter / 4 0;
+  color: $color-primary;
+
+  @include bp(small) {
+    margin: $gutter / 6 0;
+  }
+}
+$font-size-small: .65em;
+$font-size-medium: .86em;
+$font-size-large: 1.25em;
+$heading-scale: 3; // amount of px headings grow from h6 to h1
+
+@mixin font-size-small {
+  font-size: $font-size-small;
+}
+
+@mixin font-size-medium {
+  font-size: $font-size-medium;
+}
+
+@for $i from 1 through 6 {
+  h#{$i}, .h#{$i} {
+    font-size: $base-font-size + $heading-scale * (6 - $i) !important;
+
+    @include bp(small) {
+      font-size: $base-font-size / 1.5 + $heading-scale * (6 - $i) !important;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+
+  svg {
+    align-self: center;
+    justify-content: center;
+  }
+
+  // a {
+  //   text-align: center;
+  //   width: 100%;
+  //   display: block;
+  //
+  //   &.button {
+  //     width: inherit !important;
+  //     display: inherit !important;
+  //   }
+  // }
+
+  &>* {
+    text-align: center;
+  }
+}
+
+
+
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: $gutter / 2 0;
+  padding: 0;
+  width: 100%;
+
+  &.horizontal {
+    flex-direction: row;
+
+    li {
+      width: auto;
+    }
+  }
+
+  li {
+    width: 100%;
+  }
+}
+
+p {
+  font-family: $primary-font-family;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.service-description {
+  color: $color-purple;
+  font-size: $font-size-large;
+  font-weight: 500;
+}

@@ -1,0 +1,69 @@
+$white: #fff;
+$black: #000;
+$section-gutter: 30px;
+
+@mixin section-content {
+  position: relative;
+  z-index: 2;
+}
+
+@mixin section-z-index-top {
+  z-index: 99999999;
+}
+
+@mixin section-before-Cover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin section-transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin section-transition-global {
+  @include section-transition(all .35s ease);
+}
+
+@mixin section-before-cover-overlay {
+  @include section-before-Cover;
+  background-color: $black;
+  opacity: 0.65;
+}
+
+@mixin section-global-item-before {
+  position: relative;
+
+  &::before {
+    @include section-before-cover-overlay;
+    @include section-transition-global;
+  }
+
+  &:hover {
+    &::before {
+      opacity: .6;
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@mixin section-background-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,25 @@
+section.eventsNav {
+  .viewType {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.35;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.5s;
+
+    &:hover:not(.selected) {
+      opacity: 1;
+    }
+
+    &.selected {
+      color: $accent-color;
+      opacity: 1;
+      cursor: default;
+    }
+
+    i {
+      font-size: 36px;
+    }
+  }
+}

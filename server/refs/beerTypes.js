@@ -1,0 +1,17 @@
+module.exports = [
+  'Pale Ales',
+  'Dark Lagers',
+  'Brown Ales',
+  'IPAs',
+  'Wheat Beers',
+  'Stouts',
+  'Porters',
+  'Bocks',
+  'Hybrid Beers',
+  'Belgian Styles',
+  'Strong Ales',
+  'Scottish-Style Ales',
+  'Wild/Sour Ales',
+  'Pilsners and Pale Lagers',
+  'Specialty Beers',
+];

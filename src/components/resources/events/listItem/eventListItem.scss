@@ -1,0 +1,152 @@
+.eventListItem {
+  $padding: 14px;
+
+  background-color: #fff;
+	@include transition(all .35s ease);
+  @include globalItem;
+  overflow: hidden;
+  border-radius: $global-radius;
+
+  &:hover {
+    .profile {
+      background-color: darken($sdbeerColorPrimary, 3%);
+    }
+  }
+
+  .profile {
+    .profile-name {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+  }
+
+  &.grid {
+    .profile {
+      padding: $padding 0 0;
+      background-color: $sdbeerColorPrimary;
+      @include transitionGlobal;
+
+      .profile-box {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-flow: column;
+      }
+
+      .profile-image {
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        border: solid 2px #fff;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &.list {
+    .profile {
+      padding: $padding 0 0;
+      background-color: $sdbeerColorPrimary;
+      @include transitionGlobal;
+
+      .profile-box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      .profile-image {
+        width: 40px;
+        height: 40px;
+        margin-right: 1em;
+        background-color: #fff;
+        border: solid 2px #fff;
+        border-radius: 100%;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  .actions {
+    padding: $padding;
+    background: $sdbeerBGColor;
+
+    .item {
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
+    i, .label {
+      display: inline-block;
+      vertical-align: middle;
+      color: $sdbeerColorDarkBlue;
+      cursor: pointer;
+    }
+
+    i.md-inactive {
+      opacity: .26;
+    }
+
+    i.md-active {
+      color: $sdbeerColorGold;
+    }
+
+    .label {
+      background: none;
+      padding: 0 4px;
+      color: $sdbeerColorDarkBlue;
+    }
+  }
+
+  .event-title {
+    font-weight: 600;
+    line-height: 1;
+    overflow: hidden;
+
+  }
+
+  .startDayName {
+    font-size: 12px;
+    color: $sdbeerColorSubtle;
+    font-weight: bold;
+  }
+
+  .startMonthDay {
+    font-weight: bold;
+    color: $sdbeerColorSubtle;
+  }
+
+  .time {
+    font-size: 12px;
+    font-weight: bold;
+    color: $sdbeerColorSubtle;
+  }
+
+  .category {
+    font-weight: bold;
+    color: $sdbeerColorSubtle;
+    font-size: 12px;
+  }
+
+  .created {
+    color:$sdbeerColorSubtle;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-style: italic;
+    // background-color: lighten($sdbeerColorSubtle, 40%);
+  }
+}
